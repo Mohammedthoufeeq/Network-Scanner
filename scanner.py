@@ -3,11 +3,14 @@ import argparse
 
 print('''░▒▓█►─═  N⋆E⋆T⋆ ⋆S⋆C⋆A⋆N⋆E⋆R⋆ ⋆B⋆Y⋆ ⋆T⋆H⋆O⋆U⋆F⋆E⋆E ═─◄█▓▒░''')
 
+#arguments passing for input
 def pass_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("-t","--target",dest="target",help="IP range")
     opts = parser.parse_args()
     return opts
+
+#scanning ip address
 def scan(ip):
     req = scapy.ARP(pdst = ip)
     mac = scapy.Ether(dst="ff:ff:ff:ff:ff:ff")
@@ -19,5 +22,6 @@ def scan(ip):
         print(response[1].psrc + "\t\t" + response[1].hwsrc)
         print("------------------------------------------------")
 
+#Final part calling
 opts = pass_args()
 scan(opts.target)
