@@ -17,4 +17,8 @@ Requirements :
  
 Installation :
 
-git clone 
+git clone https://github.com/Mohammedthoufeeq/Network-Scanner
+
+apt install python3
+
+pip install -r requirements.txt
